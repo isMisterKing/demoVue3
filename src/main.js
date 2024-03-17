@@ -1,4 +1,9 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import defineGlobalComp from './globalComponents';
 
-createApp(App).mount('#app')
+const app = createApp(App);
+
+defineGlobalComp(app);
+
+app.mount('#app');

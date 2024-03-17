@@ -1,17 +1,18 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <button @click="save">保存</button>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import { saveList } from '@/axios/api';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+function save() {
+  saveList({id: '001'}).then(res => {
+    window.alert(res.message)
+  })
 }
+
 </script>
 
 <style>
