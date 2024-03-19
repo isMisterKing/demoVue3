@@ -2,7 +2,7 @@ import axios from "axios";
 
 // 创建一个axios对象
 const request = axios.create({
-  baseURL: 'http//:www.wangkai.com:8000',
+  baseURL: process.env.VUE_APP_BASE_URL,
   timeout: 5000
 })
 

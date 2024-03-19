@@ -1,11 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-  <button @click="save">保存</button>
+  <HelloWorld :msg=msg />
+  <button @click="save">点击按钮</button>
 </template>
 
 <script setup>
 import { saveList } from '@/axios/api';
+import { computed } from 'vue';
+
+const msg = computed(() => {
+  return process.env.VUE_APP_BASE_URL;
+})
 
 function save() {
   saveList({id: '001'}).then(res => {
